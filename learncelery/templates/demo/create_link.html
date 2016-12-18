@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>Create Url Form</title>
+    </head>
+    <body>
+        <h2>Create a url</h2>
+        <form method="POST" action="{% url 'create' %}">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+
+            {{ form.destination.errors }}
+            <h4>destination: </h4>
+            {{ form.destination }}
+
+            <input type="submit" value="Submit!">
+        </form>
+    </body>
+</html>
